@@ -5,9 +5,16 @@ from rest_framework.exceptions import PermissionDenied
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.permissions import (IsAuthenticated,
                                         IsAuthenticatedOrReadOnly)
+from rest_framework.mixins import (CreateModelMixin, ListModelMixin,
+                                   RetrieveModelMixin)
 
 from .serializers import (CommentSerializer, FollowSerializer,
                           GroupSerializer, PostSerializer)
+
+
+class CreateRetrieveListViewSet(CreateModelMixin, ListModelMixin,
+                                RetrieveModelMixin, viewsets.GenericViewSet):
+    pass
 
 
 class GroupViewSet(viewsets.ReadOnlyModelViewSet):
@@ -59,7 +66,7 @@ class CommentViewSet(viewsets.ModelViewSet):
         return super().perform_destroy(serializer)
 
 
-class FollowViewSet(viewsets.ModelViewSet):
+class FollowViewSet(CreateRetrieveListViewSet):
     permission_classes = [IsAuthenticated]
     serializer_class = FollowSerializer
     filter_backends = (filters.SearchFilter,)
