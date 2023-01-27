@@ -10,8 +10,8 @@ DRF 3.14.0
 
 JWT + Djoser
 ### Start app in dev-mode
--Clone this repositories on your PC
--Create and start venv
+- Clone this repositories on your PC
+- Create and start venv
 ```
 python -m venv env
 
@@ -19,15 +19,15 @@ source env/scripts/activate
 
 python3 -m pip install --upgrade pip
 ```
--Install requiremets.txt
+- Install requiremets.txt
 ```
 pip install -r requirements.txt
 ``` 
--Run migrations
+- Run migrations
 ```
 python manage.py migarte
 ```
--In folder with file manage.py use command for start project:
+- In folder with file manage.py use command for start project:
 ```
 python3 manage.py runserver
 ```
