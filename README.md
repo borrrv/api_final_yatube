@@ -2,13 +2,15 @@
 ### Description
 In this project realized API for yatube project which was done in time education on Yandex.Practicum
 ### Technology
-Python 3.7
+- Python 3.7
 
-Django 2.2.19
+- Django 2.2.19
 
-DRF 3.14.0
+- DRF 3.14.0
 
-JWT + Djoser
+- JWT + Djoser
+
+- SQLite3
 ### Start app in dev-mode
 - Clone this repositories on your PC
 - Create and start venv
